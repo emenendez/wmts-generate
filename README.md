@@ -7,3 +7,8 @@ Dependencies
 ------------
 Jinja2
 MarkupSafe
+
+Usage
+-----
+1. Update config.py with your service-specific values
+2. `python wmts-generate.py`

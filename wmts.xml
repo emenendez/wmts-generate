@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Capabilities version="1.0.0" xmlns="http://www.opengis.net/wmts/1.0" xmlns:gml="http://www.opengis.net/gml" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wmts/1.0 http://schemas.opengis.net/wmts/1.0/wmtsGetCapabilities_response.xsd">
+<Capabilities version="{{ Version }}" xmlns="http://www.opengis.net/wmts/1.0" xmlns:gml="http://www.opengis.net/gml" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wmts/1.0 http://schemas.opengis.net/wmts/1.0/wmtsGetCapabilities_response.xsd">
 	<ows:ServiceIdentification>
 		<ows:Title>{{ Title }}</ows:Title>
 		<ows:ServiceType>OGC WMTS</ows:ServiceType>
-		<ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
+		<ows:ServiceTypeVersion>{{ Version }}</ows:ServiceTypeVersion>
 	</ows:ServiceIdentification>
-	<ServiceMetadataURL xlink:href="{{ WMTS_Base_Directory }}1.0.0/WMTSCapabilities.xml"/>
+	<ServiceMetadataURL xlink:href="{{ WMTS_Base_Directory }}{{ Version }}/{{ ServiceMetadataFile }}"/>
 	<Contents>
 		{% for layer in Layers %}
 		<Layer>
@@ -19,8 +19,8 @@
 				<TileMatrixSet>GoogleMapsCompatible</TileMatrixSet>
 			</TileMatrixSetLink>
 			<ResourceURL format="{{ layer.Format }}" resourceType="tile" template="{{ layer.URL_Template }}"/>
-		{% endfor %}
 		</Layer>
+		{% endfor %}
 		<TileMatrixSet>
 			<ows:Identifier>GoogleMapsCompatible</ows:Identifier>
 			<ows:SupportedCRS>urn:ogc:def:crs:EPSG:6.18:3:3857</ows:SupportedCRS>
