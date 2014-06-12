@@ -1,6 +1,9 @@
 # WMTS Output
 1.0.0/
 
+# Private config files
+caltopo.wmts
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

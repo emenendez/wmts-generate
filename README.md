@@ -1,7 +1,7 @@
 wmts-generate
 =============
 
-Generate a WTMSCapabilities.xml file from a simple config object
+Generate a WTMSCapabilities.xml file from a simple JSON config file
 
 Dependencies
 ------------
@@ -10,5 +10,5 @@ Dependencies
 
 Usage
 -----
-1. Update config.py with your service-specific values
-2. `python wmts-generate.py`
+1. Create config.wmts with your service-specific values
+2. `python wmts-generate.py config.wmts`
